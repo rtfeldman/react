@@ -67,7 +67,6 @@ function validateExplicitKey(element, parentType) {
   if (element._store.validated || element.key != null) {
     return;
   }
-  element._store.validated = true;
 
   warnAndMonitorForKeyUse(
     'react_key_warning',
@@ -75,6 +74,8 @@ function validateExplicitKey(element, parentType) {
     element,
     parentType
   );
+
+  element._store.validated = true;
 }
 
 /**
